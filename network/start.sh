@@ -12,7 +12,7 @@ function replacePrivateKey() {
     echo "ca key file exchange"
     cp docker-compose-template.yml docker-compose.yml
     PRIV_KEY=$(ls crypto-config/peerOrganizations/org1.example.com/ca/ | grep _sk)
-    sed -i "s/CA_PRIVATE_KEY1/${PRIV_KEY}/g" docker-compose.yml
+    sed -i "s/CA_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose.yml
     PRIV_KEY=$(ls crypto-config/peerOrganizations/org2.example.com/ca/ | grep _sk)
     sed -i "s/CA_PRIVATE_KEY2/${PRIV_KEY}/g" docker-compose.yml
     PRIV_KEY=$(ls crypto-config/peerOrganizations/org3.example.com/ca/ | grep _sk)
